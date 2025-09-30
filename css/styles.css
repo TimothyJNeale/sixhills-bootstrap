@@ -1,6 +1,16 @@
 /* Hero Section Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #e42620;
+  --link-color: #e42621;
+  --heading-text-color: #191919;
+  --text-color: #3a3a3a;
+  --background-color: #f4f4f4;
+}
+
 .hero-section {
     background-image: url('../images/Design-office-4.png');
+    box-shadow: 0 8px 16px color-mix(in srgb, black 30%, transparent);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,10 +20,10 @@
 }
 
 .hero-content-box {
-    background: rgba(0, 0, 0, 0.6);
+    background: color-mix(in srgb, var(--primary-color) 60%, transparent);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid color-mix(in srgb, white 20%, transparent);
+    box-shadow: 0 8px 32px color-mix(in srgb, black 30%, transparent);
     width: 520px;
     margin-left: auto;
 }
@@ -23,9 +33,20 @@
     padding-right: 2rem;
 }
 
+/* Button hover effects */
+.hero-section .btn {
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 .blue-section {
-    background-color: #3498db;
+    background:  var(--primary-color);
+    box-shadow: 0 8px 32px color-mix(in srgb, black 30%, transparent);
     color: #fff;
     text-align: center;
     padding: 40px 20px;
@@ -37,6 +58,8 @@
     margin-bottom: 0;
 }
 
+
+/* Media queries for responsiveness */
 /* Center content box at 1200px breakpoint */
 @media (max-width: 1200px) {
     .hero-content-box {
@@ -95,7 +118,6 @@
 }
 
 
-
 @media (max-width: 576px) {
     .hero-section {
         min-height: 70vh;
@@ -105,14 +127,4 @@
     .hero-section h1 {
         font-size: 2rem !important;
     }
-}
-
-/* Button hover effects */
-.hero-section .btn {
-    transition: all 0.3s ease;
-}
-
-.hero-section .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
